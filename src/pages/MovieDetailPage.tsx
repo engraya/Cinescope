@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import { ArrowLeft, Heart, Globe, Clock, Calendar, DollarSign, Users } from 'lucide-react'
+import { ArrowLeft, Globe, Clock, Calendar, DollarSign, Users } from 'lucide-react'
 import { useMovieDetail } from '@/hooks/useMovieDetail'
 import { useMovieCredits } from '@/hooks/useMovieCredits'
 import { useSimilarMovies } from '@/hooks/useSimilarMovies'
@@ -207,10 +207,6 @@ export default function MovieDetailPage() {
 
             {/* Action buttons */}
             <div className="flex gap-3 pt-1">
-              <Button size="sm" className="gap-2">
-                <Heart className="h-4 w-4" />
-                Add to Favorites
-              </Button>
               {movie.homepage && (
                 <Button variant="outline" size="sm" asChild className="gap-2">
                   <a href={movie.homepage} target="_blank" rel="noopener noreferrer">
