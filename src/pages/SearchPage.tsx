@@ -148,7 +148,7 @@ export default function SearchPage() {
         </div>
 
         {/* Result count */}
-        {!isLoading && (hasActiveFilters || debouncedQuery) && (
+        {!isLoading && totalResults > 0 && (
           <p className="text-sm text-muted-foreground">
             {totalResults.toLocaleString()} movie{totalResults !== 1 ? 's' : ''} found
           </p>
@@ -156,23 +156,14 @@ export default function SearchPage() {
       </div>
 
       {/* Results grid */}
-      {!hasActiveFilters && !debouncedQuery ? (
-        <div className="flex flex-col items-center justify-center py-20 text-center">
-          <p className="text-lg font-medium text-foreground">Start searching</p>
-          <p className="text-sm text-muted-foreground">
-            Enter a title or apply filters to discover movies
-          </p>
-        </div>
-      ) : (
-        <MovieGrid
-          movies={movies}
-          isLoading={isLoading}
-          error={error}
-          onRetry={() => refetch()}
-          emptyTitle="No results found"
-          emptyMessage="Try a different search term or adjust your filters."
-        />
-      )}
+      <MovieGrid
+        movies={movies}
+        isLoading={isLoading}
+        error={error}
+        onRetry={() => refetch()}
+        emptyTitle="No results found"
+        emptyMessage="Try a different search term or adjust your filters."
+      />
 
       {/* Pagination */}
       {!isLoading && totalPages > 1 && movies.length > 0 && (

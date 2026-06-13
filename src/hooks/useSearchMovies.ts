@@ -29,7 +29,7 @@ export function useSearchMovies(filters: SearchFilters, page: number) {
       }
       return discoverMovies(params)
     },
-    enabled: hasQuery || hasFilters,
+    enabled: true,
     staleTime: 2 * 60_000,
   })
 }
