@@ -51,14 +51,14 @@ export function Sidebar({ onNavClick }: { onNavClick?: () => void }) {
   return (
     <div className="flex h-full flex-col">
       {/* Logo */}
-      <div className="flex items-center gap-2.5 px-5 py-6">
+      <NavLink to="/" className="flex items-center gap-2.5 px-5 py-6">
         <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary">
           <Clapperboard className="h-5 w-5 text-primary-foreground" />
         </div>
         <span className="text-xl font-bold tracking-tight text-foreground">
           Cine<span className="text-primary">scope</span>
         </span>
-      </div>
+      </NavLink>
 
       <div className="px-3 pb-2">
         <p className="px-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -86,10 +86,6 @@ export function Sidebar({ onNavClick }: { onNavClick?: () => void }) {
           )}
           {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
         </button>
-      </div>
-
-      <div className="p-4 text-center">
-        <p className="text-xs text-muted-foreground">Powered by TMDB</p>
       </div>
     </div>
   )
