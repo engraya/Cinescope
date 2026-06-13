@@ -18,7 +18,8 @@ export function useMovieFilters() {
     setParams(
       (prev) => {
         const next = new URLSearchParams(prev)
-        const paramKey = key === 'query' ? 'q' : key
+        const keyMap: Record<string, string> = { query: 'q', genreId: 'genre', minRating: 'rating' }
+        const paramKey = keyMap[key] ?? key
         if (value) next.set(paramKey, value)
         else next.delete(paramKey)
         if (key !== 'page') next.set('page', '1')
