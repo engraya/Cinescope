@@ -7,7 +7,8 @@ describe('cn', () => {
   })
 
   it('handles conditional classes', () => {
-    expect(cn('foo', false && 'bar', 'baz')).toBe('foo baz')
+    const active: boolean = false
+    expect(cn('foo', active && 'bar', 'baz')).toBe('foo baz')
   })
 
   it('deduplicates conflicting Tailwind classes', () => {
