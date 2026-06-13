@@ -5,13 +5,7 @@ import type { SearchFilters } from '@/types'
 
 export function useSearchMovies(filters: SearchFilters, page: number) {
   const hasQuery = filters.query.trim().length > 0
-  const hasFilters =
-    !hasQuery &&
-    (!!filters.genreId ||
-      !!filters.year ||
-      !!filters.minRating ||
-      filters.sort !== 'popularity.desc')
-
+  
   return useQuery({
     queryKey: hasQuery
       ? movieKeys.search(filters.query, page, filters.year || undefined)
