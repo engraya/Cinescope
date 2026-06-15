@@ -189,7 +189,7 @@ cinescope/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/cinescope.git
+git clone https://github.com/engraya/Cinescope.git
 cd cinescope
 ```
 
@@ -209,6 +209,8 @@ Open `.env` and add your TMDB API key:
 
 ```env
 VITE_TMDB_API_KEY=your_tmdb_api_key_here
+VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 ```
 
 ### 4. Start the development server
@@ -406,12 +408,6 @@ git commit -m "feat: describe the change"
 git push origin feature/your-feature-name
 # open a pull request
 ```
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
